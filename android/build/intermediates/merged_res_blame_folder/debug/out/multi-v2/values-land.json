@@ -4,17 +4,7 @@
             "outputFile": "C:\\Users\\roudi\\IdeaProjects\\youtube-creator-helper\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\roudi\\.gradle\\caches\\transforms-3\\154abca6a111626e53081bb556d06478\\transformed\\ui-1.1.0\\res\\values-land\\values-land.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "48",
-                        "endOffsets": "99"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\roudi\\.gradle\\caches\\transforms-3\\2ec0b064e72caf65cec07ad0d24643a9\\transformed\\appcompat-1.2.0\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\roudi\\.gradle\\caches\\transforms-3\\1896297182b40b990104e3843c8b45bc\\transformed\\appcompat-1.4.1\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -28,6 +18,16 @@
                         "startOffsets": "104,174,245",
                         "endColumns": "69,70,67",
                         "endOffsets": "169,240,308"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\roudi\\.gradle\\caches\\transforms-3\\fb07bb2b4705436ffc112e3837e55e45\\transformed\\ui-1.1.1\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
                     }
                 }
             ]

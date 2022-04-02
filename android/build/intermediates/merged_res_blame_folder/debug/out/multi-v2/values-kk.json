@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\roudi\\IdeaProjects\\youtube-creator-helper\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kk\\values-kk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\roudi\\.gradle\\caches\\transforms-3\\2ec0b064e72caf65cec07ad0d24643a9\\transformed\\appcompat-1.2.0\\res\\values-kk\\values-kk.xml",
+                    "source": "C:\\Users\\roudi\\.gradle\\caches\\transforms-3\\1896297182b40b990104e3843c8b45bc\\transformed\\appcompat-1.4.1\\res\\values-kk\\values-kk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\roudi\\.gradle\\caches\\transforms-3\\154abca6a111626e53081bb556d06478\\transformed\\ui-1.1.0\\res\\values-kk\\values-kk.xml",
+                    "source": "C:\\Users\\roudi\\.gradle\\caches\\transforms-3\\fb07bb2b4705436ffc112e3837e55e45\\transformed\\ui-1.1.1\\res\\values-kk\\values-kk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\roudi\\.gradle\\caches\\transforms-3\\a00a241d81477ce50d1621fbab991184\\transformed\\core-1.5.0\\res\\values-kk\\values-kk.xml",
+                    "source": "C:\\Users\\roudi\\.gradle\\caches\\transforms-3\\d16aa69ccccf4354d4dd1830af61690a\\transformed\\core-1.7.0\\res\\values-kk\\values-kk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
