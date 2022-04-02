@@ -1,12 +1,14 @@
-import com.roudikk.common.App
-import androidx.compose.material.MaterialTheme
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import com.roudikk.common.DriverFactory
+import com.roudikk.common.YoutubeCreatorHelperApplication
+import com.roudikk.common.createDatabase
 
 fun main() = application {
-    Window(onCloseRequest = ::exitApplication) {
-        MaterialTheme {
-            App()
-        }
+    Window(
+        onCloseRequest = ::exitApplication,
+        title = "Youtube Creator Helper"
+    ) {
+        YoutubeCreatorHelperApplication(createDatabase(DriverFactory()))
     }
 }

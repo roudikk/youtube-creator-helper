@@ -1,0 +1,12 @@
+CREATE TABLE YoutubeApiKey(
+  key TEXT NOT NULL
+);
+
+CREATE INDEX youtubeApiKey_key_index ON YoutubeApiKey(key);
+
+select:
+SELECT * FROM YoutubeApiKey LIMIT 1;
+
+insert:
+INSERT INTO YoutubeApiKey(key)
+VALUES (?);
