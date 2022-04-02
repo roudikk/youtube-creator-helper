@@ -1,0 +1,2 @@
+com/roudikk/common/test/BuildConfig.java
+ com.roudikk.common.test.BuildConfig

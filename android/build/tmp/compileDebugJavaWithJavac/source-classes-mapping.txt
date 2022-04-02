@@ -1,0 +1,2 @@
+com/roudikk/android/BuildConfig.java
+ com.roudikk.android.BuildConfig
