@@ -1,2 +1,0 @@
-com/roudikk/android/test/BuildConfig.java
- com.roudikk.android.test.BuildConfig
