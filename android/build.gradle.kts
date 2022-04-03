@@ -4,7 +4,7 @@ plugins {
     kotlin("android")
 }
 
-group = "com.roudikk"
+group = "com.roudikk.youtube-creator-helper"
 version = "1.0"
 
 repositories {
@@ -19,7 +19,7 @@ dependencies {
 android {
     compileSdk = 31
     defaultConfig {
-        applicationId = "com.roudikk.android"
+        applicationId = "com.roudikk.youtube-creator-helper"
         minSdk = 24
         targetSdk = 31
         versionCode = 1
