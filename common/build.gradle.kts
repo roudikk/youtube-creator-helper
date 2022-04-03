@@ -29,6 +29,7 @@ kotlin {
             languageSettings.optIn("androidx.compose.material.ExperimentalMaterialApi")
             languageSettings.optIn("androidx.compose.material3.ExperimentalMaterial3Api")
             languageSettings.optIn("org.jetbrains.compose.ExperimentalComposeLibrary")
+            languageSettings.optIn("androidx.compose.ui.ExperimentalComposeUiApi")
             languageSettings.optIn("androidx.compose.foundation.ExperimentalFoundationApi")
         }
         val commonMain by getting {

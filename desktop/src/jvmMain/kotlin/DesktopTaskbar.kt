@@ -1,20 +1,24 @@
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.input.pointer.consumeAllChanges
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -23,11 +27,18 @@ import androidx.compose.ui.unit.sp
 fun DesktopTaskbar(
     title: String,
     onMinimize: () -> Unit,
-    onExit: () -> Unit
+    onExit: () -> Unit,
+    onDrag: (offset: Offset) -> Unit
 ) {
     Surface(
-        modifier = Modifier.height(34.dp)
-            .fillMaxWidth(),
+        modifier = Modifier
+            .height(34.dp)
+            .fillMaxWidth()
+            .pointerInput(Unit) {
+                detectDragGestures { change, dragAmount ->
+                    onDrag(dragAmount)
+                }
+            },
         tonalElevation = 4.dp
     ) {
         Row(
@@ -81,7 +92,8 @@ fun TaskbarAction(
         Icon(
             modifier = Modifier.size(20.dp),
             imageVector = icon,
-            contentDescription = contentDescription
+            contentDescription = contentDescription,
+            tint = Color.White
         )
     }
 }
