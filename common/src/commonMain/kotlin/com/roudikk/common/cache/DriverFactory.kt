@@ -1,4 +1,4 @@
-package com.roudikk.common
+package com.roudikk.common.cache
 
 import com.roudikk.YoutubeCreatorHelperDatabase
 import com.squareup.sqldelight.db.SqlDriver
