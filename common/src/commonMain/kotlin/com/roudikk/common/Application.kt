@@ -21,22 +21,20 @@ fun YoutubeCreatorHelperApplication(
     coroutineScope = rememberCoroutineScope(),
     database = database
 ) {
-    YoutubeCreatorHelperTheme {
-        val applicationViewModel by rememberInstance<MainViewModel>()
+    val applicationViewModel by rememberInstance<MainViewModel>()
 
-        val state by applicationViewModel.stateFlow.collectAsState()
+    val state by applicationViewModel.stateFlow.collectAsState()
 
-        if (state.loading) return@YoutubeCreatorHelperTheme
+    if (state.loading) return@YoutubeCreatorHelperDI
 
-        Surface(modifier = Modifier.fillMaxSize()) {
-            Crossfade(
-                targetState = state.showHome
-            ) { targetState ->
-                if (targetState) {
-                    Navigator(HomeScreen())
-                } else {
-                    InstructionsScreen().Content()
-                }
+    Surface(modifier = Modifier.fillMaxSize()) {
+        Crossfade(
+            targetState = state.showHome
+        ) { targetState ->
+            if (targetState) {
+                Navigator(HomeScreen())
+            } else {
+                InstructionsScreen().Content()
             }
         }
     }

@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("multiplatform")
-    id("org.jetbrains.compose") version "1.1.1"
+    id("org.jetbrains.compose") version "1.1.0"
     id("com.android.library")
     id("com.squareup.sqldelight")
 }
@@ -38,6 +38,7 @@ kotlin {
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 api(compose.material3)
                 api(compose.material)
+                api(compose.materialIconsExtended)
                 api("cafe.adriel.voyager:voyager-navigator:$currentVersion")
                 api("cafe.adriel.voyager:voyager-bottom-sheet-navigator:$currentVersion")
                 api("cafe.adriel.voyager:voyager-tab-navigator:$currentVersion")
@@ -46,6 +47,7 @@ kotlin {
                 api("com.google.accompanist:accompanist-insets:$accompanistVersion")
                 api("com.squareup.sqldelight:coroutines-extensions:1.5.3")
                 api("org.kodein.di:kodein-di-framework-compose:7.9.0")
+                api("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.6.0")
             }
         }
         val commonTest by getting {
