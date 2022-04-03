@@ -37,6 +37,7 @@ private fun InstructionsContent(
     onUpdateSelected: (String) -> Unit
 ) {
     val scrollState = rememberScrollState()
+
     Scaffold(
         topBar = {
             SmallTopAppBar(

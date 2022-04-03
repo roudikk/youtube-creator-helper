@@ -1,8 +1,8 @@
-CREATE TABLE YoutubeApiKey(
+CREATE TABLE IF NOT EXISTS YoutubeApiKey(
   key TEXT NOT NULL
 );
 
-CREATE INDEX youtubeApiKey_key_index ON YoutubeApiKey(key);
+CREATE INDEX IF NOT EXISTS youtubeApiKey_key_index ON YoutubeApiKey(key);
 
 select:
 SELECT * FROM YoutubeApiKey LIMIT 1;
