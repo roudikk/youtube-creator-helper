@@ -22,7 +22,7 @@ class InstructionsScreen : Screen {
     @Composable
     override fun Content() {
         val repository by rememberInstance<YoutubeApiRepository>()
-        val viewModel = rememberScreenModel { InstructionsViewModel(repository) }
+        val viewModel = remember { InstructionsViewModel(repository) }
         val state by viewModel.state.collectAsState()
 
         InstructionsContent(

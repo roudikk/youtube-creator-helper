@@ -10,3 +10,6 @@ SELECT * FROM YoutubeApiKey LIMIT 1;
 insert:
 INSERT INTO YoutubeApiKey(key)
 VALUES (?);
+
+clear:
+DELETE FROM YoutubeApiKey;

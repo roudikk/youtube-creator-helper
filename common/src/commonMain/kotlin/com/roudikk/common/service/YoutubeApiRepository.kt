@@ -16,4 +16,8 @@ class YoutubeApiRepository(
     fun updateApikey(apiKey: String) {
         database.youtubeApiKeyQueries.insert(apiKey)
     }
+
+    fun clearApiKey() {
+        database.youtubeApiKeyQueries.clear()
+    }
 }
