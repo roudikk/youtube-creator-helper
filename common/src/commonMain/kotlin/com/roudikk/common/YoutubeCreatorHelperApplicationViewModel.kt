@@ -1,7 +1,6 @@
 package com.roudikk.common
 
-import com.roudikk.YoutubeCreatorHelperDatabase
-import com.squareup.sqldelight.runtime.coroutines.asFlow
+import com.roudikk.common.service.YoutubeApiRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.*
 
@@ -11,23 +10,22 @@ data class MainState(
 )
 
 class YoutubeCreatorHelperApplicationViewModel(
-    scope: CoroutineScope,
-    database: YoutubeCreatorHelperDatabase
+    coroutineScope: CoroutineScope,
+    repository: YoutubeApiRepository
 ) {
 
-    val stateFlow: StateFlow<MainState> = database.youtubeApiKeyQueries
-        .select()
-        .asFlow()
-        .map { it.executeAsOneOrNull() }
+    val stateFlow: StateFlow<MainState> = repository
+        .flowOfApiKey()
         .map {
-            println("Hello: $it")
             MainState(
                 showHome = it?.isNotEmpty() == true,
                 loading = false
             )
         }
         .stateIn(
-            scope, SharingStarted.Eagerly, MainState(
+            scope = coroutineScope,
+            started = SharingStarted.Eagerly,
+            initialValue = MainState(
                 showHome = false,
                 loading = true
             )

@@ -21,6 +21,15 @@ kotlin {
         }
     }
     sourceSets {
+        all {
+            languageSettings.optIn("org.jetbrains.compose.ExperimentalComposeLibrary")
+            languageSettings.optIn("kotlin.RequiresOptIn")
+            languageSettings.optIn("androidx.compose.animation.ExperimentalAnimationApi")
+            languageSettings.optIn("androidx.compose.material.ExperimentalMaterialApi")
+            languageSettings.optIn("androidx.compose.material3.ExperimentalMaterial3Api")
+            languageSettings.optIn("org.jetbrains.compose.ExperimentalComposeLibrary")
+            languageSettings.optIn("androidx.compose.foundation.ExperimentalFoundationApi")
+        }
         val commonMain by getting {
             dependencies {
                 api(compose.runtime)
@@ -35,6 +44,7 @@ kotlin {
                 api("com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion")
                 api("com.google.accompanist:accompanist-insets:$accompanistVersion")
                 api("com.squareup.sqldelight:coroutines-extensions:1.5.3")
+                api("org.kodein.di:kodein-di-framework-compose:7.9.0")
             }
         }
         val commonTest by getting {
@@ -81,28 +91,4 @@ sqldelight {
     database(name = "YoutubeCreatorHelperDatabase") {
         packageName = "com.roudikk"
     }
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions.freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions.freeCompilerArgs += "-opt-in=androidx.compose.animation.ExperimentalAnimationApi"
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions.freeCompilerArgs += "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api"
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions.freeCompilerArgs += "-opt-in=org.jetbrains.compose.ExperimentalComposeLibrary"
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions.freeCompilerArgs += "-opt-in=androidx.compose.material.ExperimentalMaterialApi"
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions.freeCompilerArgs += "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi"
 }
