@@ -8,6 +8,9 @@ import kotlinx.coroutines.flow.map
 class YoutubeApiRepository(
     private val database: YoutubeCreatorHelperDatabase
 ) {
+
+    fun currentApiKey(): String? = database.youtubeApiKeyQueries.select().executeAsOneOrNull()
+
     fun flowOfApiKey(): Flow<String?> = database.youtubeApiKeyQueries
         .select()
         .asFlow()
