@@ -1,12 +1,14 @@
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -39,7 +41,8 @@ fun DesktopTaskbar(
                     onDrag(dragAmount)
                 }
             },
-        tonalElevation = 4.dp
+        tonalElevation = 4.dp,
+        color = MaterialTheme.colorScheme.primary
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -55,7 +58,7 @@ fun DesktopTaskbar(
             Spacer(modifier = Modifier.weight(1F))
 
             TaskbarAction(
-                color = Color(0xffbd954a),
+                color = Color(0xffffd561),
                 icon = Icons.Default.Remove,
                 contentDescription = "Minimize",
                 onClick = onMinimize
@@ -85,7 +88,7 @@ fun TaskbarAction(
         modifier = Modifier
             .size(24.dp)
             .clip(CircleShape)
-            .background(color)
+//            .background(color)
             .clickable(onClick = onClick),
         contentAlignment = Alignment.Center
     ) {

@@ -61,7 +61,6 @@ kotlin {
                 api("com.squareup.sqldelight:android-driver:1.5.3")
                 api("androidx.appcompat:appcompat:1.4.1")
                 api("androidx.core:core-ktx:1.7.0")
-                api("androidx.compose.ui:ui:1.1.0")
             }
         }
         val androidTest by getting {

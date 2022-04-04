@@ -1,9 +1,12 @@
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
@@ -16,6 +19,7 @@ import com.roudikk.common.cache.DriverFactory
 import com.roudikk.common.cache.createDatabase
 import com.roudikk.common.getPlatformName
 import com.roudikk.common.ui.theme.YoutubeCreatorHelperTheme
+import com.roudikk.common.widgets.imageResource
 
 fun main() = application {
     val localDensity = LocalDensity.current
@@ -27,28 +31,14 @@ fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
         title = "Youtube Creator Helper",
-        undecorated = true,
+        undecorated = false,
         resizable = true,
         state = windowState,
-        transparent = true,
+        icon = imageResource("youtube_icon.png"),
     ) {
         Column(modifier = Modifier.clip(RoundedCornerShape(12.dp))) {
-            YoutubeCreatorHelperTheme {
+            YoutubeCreatorHelperTheme(false) {
                 Column {
-                    DesktopTaskbar(
-                        title = "Youtube Creator Helper (${getPlatformName()})",
-                        onMinimize = { windowState.isMinimized = true },
-                        onExit = ::exitApplication,
-                        onDrag = { offset ->
-                            println("Offset change: $offset")
-                            windowState.position = with(localDensity) {
-                                WindowPosition(
-                                    x = windowState.position.x + offset.x.toDp(),
-                                    y = windowState.position.y + offset.y.toDp()
-                                )
-                            }
-                        }
-                    )
                     YoutubeCreatorHelperApplication(createDatabase(DriverFactory()))
                 }
             }
